@@ -4,129 +4,112 @@ downloads: ~/.ansible-downloads/
 configure_dotfiles: no
 configure_sudoers: no
 configure_terminal: no
-configure_osx: no
+configure_osx: true
+configure_dock: true
 
 homebrew_installed_packages:
-  - aws-iam-authenticator
-  - awscli
-  - bash
-  - bash-completion
-  - bash-git-prompt
-  - bat
-  - fzf
-  - gawk
-  - gdrive
+  - zsh
   - git
-  - git-extras
-  - git-hooks
-  - git-lfs
-  - git-standup
-  - github/gh/gh
-  - gnu-sed
-  - gnu-tar
-  - go
-  - go-jsonnet
-  - gpg
-  - htop
-  - httpie
-  - hub
-  - ipcalc
-  - iperf
-  - jq
-  - kind
-  - kubernetes-cli
-  - kubectx
-  - nmap
-  - openssl
-  - parallel
-  - pigz
-  - powerlevel10k
-  - pv
-  - pwgen
-  - pyenv
-  - pyenv-virtualenv
-  - qmk/qmk/qmk
-  - readline
-  - shellcheck
-  - sqlite
-  - ssh-copy-id
-  - stern
-  - the_silver_searcher
-  - tmux
-  - tree
-  - vim
-  - watch
-  - wagoodman/dive/dive
-  - wget
-  - wrk
-  - yq
-  - zsh-kubectl-prompt
-
-homebrew_taps:
-  - homebrew/bundle
-  - homebrew/cask
-  - homebrew/cask-drivers
-  - homebrew/cask-fonts
-  - homebrew/cask-versions
-  - homebrew/core
-  - homebrew/services
-  - devhubapp/devhub
-  - romkatv/powerlevel10k
-  - superbrothers/zsh-kubectl-prompt
+  - zsh-history-substring-search
+  - zsh-syntax-highlighting
+  - zsh-autosuggestions
+  - zsh-you-should-use
+  - zsh-git-prompt
+  #- dockutil
+  # - aws-iam-authenticator
+  # - awscli
+  # - fzf
+  # - gawk
+  # - git
+  # - git-extras
+  # - git-hooks
+  # - git-lfs
+  # - git-standup
+  # - github/gh/gh
+  # - gnu-sed
+  # - gnu-tar
+  # - gpg
+  # - htop
+  # - httpie
+  # - hub
+  # - ipcalc
+  # - iperf
+  # - jq
+  # - kind
+  # - nmap
+  # - openssl
+  # - pigz
+  # - pv
+  # - pwgen
+  # - pyenv
+  # - pyenv-virtualenv
+  # - qmk/qmk/qmk
+  # - readline
+  # - shellcheck
+  # - sqlite
+  # - ssh-copy-id
+  # - stern
+  # - the_silver_searcher
+  # - tmux
+  # - tree
+  # - watch
+  # - wget
+  # - wrk
+  # - yq
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - autodesk-fusion360
-  - authy
-  - bartender
-  - devhub
-  - discord
-  - docker
-  - dropbox
+  - barrier
+  #- cyberduck
+  - deepl
+  #- docker
+  #- emacs-mac-spacemacs-icon
+  - figma
   - firefox
-  - font-cascadia-mono
-  - font-cascadia-mono-pl
-  - font-fira-code
-  - font-meslo-for-powerline
-  - font-meslo-lg-nerd-font
-  - font-meslo-lg
-  - google-backup-and-sync
-#  - google-chrome
-  - google-cloud-sdk
-  - google-drive-file-stream
-  - ibm-cloud-cli
-  - istat-menus
+  - font-source-code-pro
+  - gas-mask
+  - hammerspoon
+  - github
+  - google-chrome
+  - hpedrorodrigues/tools/dockutil
+  - insomnia
   - iterm2
-  - karabiner-elements
-  - logitech-options
-#  - lastpass
-  - okta-advanced-server-access
-  - prusaslicer
-#  - slack
-  - sonos
+  - lastpass
+  - marked
+  #- multipass
+  - notion
+  - postman
+  - ql-ansilove
+  - qladdict
+  - qlcolorcode
+  - qlcommonmark
+  - qlimagesize
+  - qlmarkdown
+  - qlmobi
+  - qlprettypatch
+  - qlstephen
+  - qlvideo
+  - qlcolorcode
+  - quicklook-csv
+  - quicklook-json
+  - quicklook-pfm
+  - slack
   - spotify
-  - synology-surveillance-station-client
-  - ultimaker-cura
-  - vagrant
-  - virtualbox
-  - virtualbox-extension-pack
+  - telegram
+  #- tidal
+  #- timely
+  - timeular
+  - vmware-fusion
   - visual-studio-code
-#  - zoomus
+  - webpquicklook
+  #- windscribe
+  # - logitech-options
+  # - synology-surveillance-station-client
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_email: ""
 mas_password: ""
 mas_installed_apps:
-  - { id: 406056744,  name: "Evernote" }
-  - { id: 442160987,  name: "Flycut" }
-  - { id: 926036361,  name: "LastPass" }
-  - { id: 441258766,  name: "Magnet" }
-  - { id: 419330170,  name: "Moom" }
-  - { id: 1116599239, name: "NordVPN IKE" }
-  - { id: 1142753258, name: "Ring" }
-  - { id: 425955336,  name: "Skitch" }
-  - { id: 747648890,  name: "Telegram" }
-  - { id: 497799835,  name: "Xcode" }
 
 osx_script: "~/.osx --no-restart"
 
@@ -151,6 +134,25 @@ pip_packages:
   #   version: "0.16.3" # default: N/A
   - name: gimme-aws-creds
     state: latest
+
+dotfiles_repo: https://github.com/einSelbst/dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/
+dotfiles_files:
+  - .zshrc
+  - .zshenv
+  - .zshaliases
+  - .gitignore
+  - .inputrc
+  - .osx
+
+dockitems_remove:
+  - Maps
+  - TV
+dockitems_persist:
+  - name: "GitHub Desktop"
+    path: "/Applications/GitHub Desktop.app/"
+    pos: 5
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []

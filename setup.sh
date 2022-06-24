@@ -2,6 +2,12 @@
 
 #set -eoup
 
+function mac::ensure-dependencies() {
+    xcode-select --install || true
+    /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install ansible mas
+}
+
 function mac::ensure-upstream() {
   if [ ! -d mac-dev-playbook ]; then
     git clone https://github.com/geerlingguy/mac-dev-playbook 
@@ -16,12 +22,6 @@ function mac::ensure-upstream() {
   fi
 }
 
-function mac::ensure-dependencies() {
-  xcode-select --install || true
-  /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew install ansible mas
-}
-
 function mac::apply() {
     cd mac-dev-playbook
     [ ! -f config.yml ] && ln -s ../config.yml .
@@ -33,3 +33,5 @@ function mac::setup() {
     mac::ensure-upstream
     mac::apply
 }
+
+mac::setup
